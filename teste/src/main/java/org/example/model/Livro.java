@@ -16,16 +16,14 @@ public class Livro {
     @Column(length = 100)
     private String generoLiterario;
 
-    @Column(name = "sobrenome_autor") // Nome da coluna no banco de dados
-    private String sobrenomeAutor; // Propriedade sobrenomeAutor
+    @Column(name = "sobrenome_autor") 
+    private String sobrenomeAutor; 
 
     @Column(length = 100)
     private String editora;
 
     @Column(name = "data_publicacao")
     private Date dataPublicacao;
-
-    // Getters e setters
 
     public Long getId() {
         return id;
