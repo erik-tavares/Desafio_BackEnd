@@ -35,7 +35,6 @@ public class LivrariaService {
         Livraria livro = livrariaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Livro não encontrado com id: " + id));
 
-        // Atualiza os detalhes do livro com os fornecidos
         livro.setTitulo(livroDetalhes.getTitulo());
         livro.setGeneroLiterario(livroDetalhes.getGeneroLiterario());
         livro.setEditora(livroDetalhes.getEditora());
