@@ -33,7 +33,6 @@ public class RevistaController {
             @RequestParam(required = false) String sobrenomeAutor) {
         List<Revista> revistas;
 
-        // Verifica se algum dos parâmetros está presente e chama o método apropriado do serviço
         if (titulo != null && generoLiterario != null && sobrenomeAutor != null) {
             revistas = revistaService.findByTituloAndGeneroLiterarioAndSobrenomeAutor(titulo, generoLiterario, sobrenomeAutor);
         } else if (titulo != null && generoLiterario != null) {
@@ -49,7 +48,6 @@ public class RevistaController {
         } else if (sobrenomeAutor != null) {
             revistas = revistaService.findBySobrenomeAutor(sobrenomeAutor);
         } else {
-            // Se nenhum parâmetro estiver presente, lista todas as revistas
             revistas = revistaService.listarTodasRevistas();
         }
 
