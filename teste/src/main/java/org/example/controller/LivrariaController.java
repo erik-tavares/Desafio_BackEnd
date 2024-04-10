@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
-@RequestMapping("/livraria") // Base path para todos os endpoints neste controlador
+@RequestMapping("/livraria") 
 public class LivrariaController {
 
     private final LivrariaService livrariaService;
