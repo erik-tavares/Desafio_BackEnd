@@ -42,13 +42,12 @@ public class LivrariaController {
         return livrariaService.buscarLivrarias(titulo, generoLiterario, nomeAutor, disponibilidade);
     }
 
-    @PutMapping("{id}") // Adiciona o mapeamento PUT para este método
+    @PutMapping("{id}") 
     public ResponseEntity<Livraria> atualizarLivro(@PathVariable Long id, @RequestBody Livraria livroDetalhes) {
         try {
             Livraria livroAtualizado = livrariaService.atualizarLivro(id, livroDetalhes);
             return ResponseEntity.ok(livroAtualizado);
         } catch (RuntimeException e) {
-            // Tratamento de erro, por exemplo, se o livro não for encontrado
             return ResponseEntity.notFound().build();
         }
     }
@@ -67,7 +66,6 @@ public class LivrariaController {
             livrariaService.excluirLivro(id);
             return ResponseEntity.ok().build();
         } catch (RuntimeException e) {
-            // Log do erro, se necessário
             return ResponseEntity.badRequest().build();
         }
     }
