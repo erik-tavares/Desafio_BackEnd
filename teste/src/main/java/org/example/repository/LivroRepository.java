@@ -24,6 +24,5 @@ public interface LivroRepository extends JpaRepository<Livro, Long> {
     List<Livro> findByTituloContainingAndGeneroLiterarioContainingAndSobrenomeAutorContaining(
             String titulo, String generoLiterario, String sobrenomeAutor);
 
-    // Métodos de consulta adicionais
 }
 
